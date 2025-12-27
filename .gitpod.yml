@@ -1,10 +1,9 @@
-image:
-  file: .gitpod.Dockerfile
-
+# .gitpod.yml
 tasks:
-  - init: npm install
-    command: npx playwright install --with-deps && npx playwright test
-
-vscode:
-  extensions:
-    - ms-playwright.playwright
+  - name: Setup & run Playwright on LambdaTest
+    init: |
+      npm ci || npm install
+      npx playwright install --with-deps
+    command: |
+      # Run tests in parallel on LambdaTest Grid (3 workers across 3 projects)
+      npx playwright test --workers=3
