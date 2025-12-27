@@ -18,4 +18,7 @@ npx playwright test <br/>
 
 ##### To view HTML report 
 npx playwright show-report <br/>
+
+## UI Mode of the Playwright test run 
+npx playwright test --ui
  

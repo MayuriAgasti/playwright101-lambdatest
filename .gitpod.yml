@@ -1,0 +1,10 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: npm install
+    command: npx playwright install --with-deps && npx playwright test
+
+vscode:
+  extensions:
+    - ms-playwright.playwright
