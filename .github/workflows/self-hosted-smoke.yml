@@ -1,0 +1,16 @@
+name: Self-hosted smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  smoke:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Runner identity
+        run: |
+          hostname
+          whoami
+          uname -a
+          docker --version
